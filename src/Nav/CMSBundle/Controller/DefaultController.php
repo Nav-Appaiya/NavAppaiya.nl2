@@ -8,6 +8,11 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('NavCMSBundle:Default:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $pages = $em->getRepository('NavCMSBundle:Page')->findAll();
+
+        return $this->render('NavCMSBundle:Default:index.html.twig', array(
+            'pages' => $pages
+        ));
     }
 }
