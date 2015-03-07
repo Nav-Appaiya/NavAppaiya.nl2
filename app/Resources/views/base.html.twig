@@ -38,7 +38,9 @@
                     <li class="active"><a href="#">Blog <span class="sr-only">(current)</span></a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Contact</a></li>
-
+                    {% if app.user is null %}
+                        <li><a href="{{ path('login') }}">Login</a></li>
+                    {% endif %}
                 </ul>
                 <form class="navbar-form pull-right" role="search">
                     <div class="form-group">
