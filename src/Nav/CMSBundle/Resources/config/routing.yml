@@ -1,7 +1,18 @@
 nav_cms_cms_user:
-    resource: "@NavCMSBundle/Resources/config/routing/user.yml"
-    prefix:   /cms/user
+  resource: "@NavCMSBundle/Resources/config/routing/user.yml"
+  prefix:   /cms/user
 
 nav_cms_homepage:
-    path:     /
-    defaults: { _controller: NavCMSBundle:Default:index }
+  path:     /
+  defaults: { _controller: NavCMSBundle:Default:index }
+
+# See security.yml
+login:
+  path: /login
+  defaults: { _controller: NavCMSBundle:Security:login }
+
+login_check:
+  path: /login_check
+
+logout:
+  path: /logout

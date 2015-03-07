@@ -4,6 +4,9 @@
 !app/cache/.gitkeep
 !app/logs/.gitkeep
 
+#idea PHPStorm!
+.idea
+
 # Cache and logs (Symfony3)
 /var/cache/*
 /var/logs/*
@@ -35,3 +38,4 @@
 
 # Composer PHAR
 /composer.phar
+composer.lock
