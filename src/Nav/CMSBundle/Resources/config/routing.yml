@@ -1,0 +1,7 @@
+nav_cms_cms_user:
+    resource: "@NavCMSBundle/Resources/config/routing/user.yml"
+    prefix:   /cms/user
+
+nav_cms_homepage:
+    path:     /
+    defaults: { _controller: NavCMSBundle:Default:index }
