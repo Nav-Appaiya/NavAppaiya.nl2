@@ -1,0 +1,13 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <h2>{{ page.title }}</h2>
+            <p class="lead">{{ page.category.name }}</p>
+            <p>
+                {{ page.content }}
+            </p>
+        </div>
+    </div>
+{% endblock %}
