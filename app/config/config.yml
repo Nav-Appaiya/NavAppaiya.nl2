@@ -1,7 +1,8 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
-
+    - { resource: twitter.conf.yml }
+    - { resource: twitter.yml }
 framework:
     #esi:             ~
     #translator:      { fallbacks: ["%locale%"] }

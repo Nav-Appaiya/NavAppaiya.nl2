@@ -45,3 +45,7 @@ nav_contact:
     path: /contact
     defaults: { _controller: NavCMSBundle:Contact:index }
 
+# Test
+nav_test:
+    path: /test
+    defaults: { _controller: NavCMSBundle:Test:index }
