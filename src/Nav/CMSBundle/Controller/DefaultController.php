@@ -2,6 +2,7 @@
 
 namespace Nav\CMSBundle\Controller;
 
+use Guzzle\Http\Client;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
@@ -19,8 +20,27 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         $page = $em->getRepository('NavCMSBundle:Page')->find($id);
 
+        // Get the articles
+        $articles = $this->getFeedArticles( $page->getFeed() );
+
         return $this->render('NavCMSBundle:Default:display.html.twig', array(
-           'page' => $page
+            'page'      => $page,
+            'articles'  => $articles
         ));
+    }
+
+    /**
+     * RSS to JSON with the
+     * Google API's.
+     *
+     * @param $feed
+     * @return mixed
+     */
+    private function getFeedArticles($feed){
+        $client = new Client();
+        $googleApi = 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&q='.$feed;
+        $response = $client->get($googleApi)->send()->getBody();
+
+        return \GuzzleHttp\json_decode($response)->responseData->feed;
     }
 }

@@ -12,16 +12,22 @@ class TestController extends Controller
     public function indexAction()
     {
 
-        $twitterClient = $this->get('guzzle.twitter.client');
+        $client = new Client();
 
-        $request = $twitterClient->post('statuses/update.json', null, array(
-            'status'=> 'Working on a new Feed to aggregate from, maintenance mode!'
-        ));
+        $response = $this->feedBurner('http://feeds.feedburner.com/technieuws/nav');
 
+        echo '<pre>';
 
-        $data = $request->send()->json();
-        var_dump($data);exit;
+        var_dump($response->entries[0]);
 
+        exit;
+    }
+
+    public function feedBurner($feedUrl)
+    {
+        $client = new Client();
+        $response = $client->get("http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&q=" . $feedUrl)->json(['object'=>true]);
+        return $response->responseData->feed;
     }
 
 }

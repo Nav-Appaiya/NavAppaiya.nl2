@@ -1,3 +1,7 @@
+nav_feed:
+    resource: "@NavFeedBundle/Resources/config/routing.yml"
+    prefix:   /feed
+
 nav_cms:
     resource: "@NavCMSBundle/Resources/config/routing.yml"
     prefix:   /
