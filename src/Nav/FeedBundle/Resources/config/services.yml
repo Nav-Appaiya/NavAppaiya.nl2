@@ -1,4 +1,0 @@
-services:
-#    nav_feed.example:
-#        class: Nav\FeedBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
