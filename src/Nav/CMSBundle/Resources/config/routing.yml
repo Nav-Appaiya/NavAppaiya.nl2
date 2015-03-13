@@ -40,6 +40,7 @@ logout:
 nav_about:
     path: /about
     defaults: { _controller: NavCMSBundle:About:index }
+
 # Contact
 nav_contact:
     path: /contact
@@ -49,3 +50,8 @@ nav_contact:
 nav_test:
     path: /test
     defaults: { _controller: NavCMSBundle:Test:index }
+
+# Gists page
+nav_gists:
+    path: /gists
+    defaults: { _controller: NavCMSBundle:Gists:index }
