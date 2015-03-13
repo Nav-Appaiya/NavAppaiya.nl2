@@ -11,16 +11,15 @@ class TestController extends Controller
 {
     public function indexAction()
     {
+        $notifications = $this->get('nav.notification');
 
-        $client = new Client();
+        $notifications->add("test1", array("type" => "instant", "message" => "This is awesome"));
+        $notifications->add("test2", array("type" => "instant", "message" => "This is awesome"));
 
-        $response = $this->feedBurner('http://feeds.feedburner.com/technieuws/nav');
+        return $this->render('NavNotificationBundle:Notifications:success.html.twig', [
+            'notifications'=>$notifications
+        ]);
 
-        echo '<pre>';
-
-        var_dump($response->entries[0]);
-
-        exit;
     }
 
     public function feedBurner($feedUrl)

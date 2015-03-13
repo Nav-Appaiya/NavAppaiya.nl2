@@ -18,7 +18,8 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Nav\CMSBundle\NavCMSBundle(),
             new Playbloom\Bundle\GuzzleBundle\PlaybloomGuzzleBundle(),
-            new Nav\FeedBundle\NavFeedBundle()
+            new Nav\FeedBundle\NavFeedBundle(),
+            new Nav\NotificationBundle\NavNotificationBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
