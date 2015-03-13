@@ -1,4 +1,4 @@
-A CMS System with Symfony
+A CMS with Symfony
 ========================
 Personal project to learn more about the Symfony way
 of creating a blog site. The code will be explained in
