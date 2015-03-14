@@ -9,13 +9,21 @@
 namespace Nav\CMSBundle\Controller;
 
 
+use Nav\CMSBundle\Entity\Contact;
+use Nav\CMSBundle\Form\ContactType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ContactController extends Controller{
 
-    public function indexAction() {
+    public function indexAction()
+    {
 
-        return $this->render('NavCMSBundle:Default:contact.html.twig');
+        $contact = new Contact();
+        $form = $this->createForm(new ContactType(), $contact);
+
+        return $this->render('NavCMSBundle:Default:contact.html.twig', [
+            'form'=> $form->createView()
+        ]);
     }
 
 }
