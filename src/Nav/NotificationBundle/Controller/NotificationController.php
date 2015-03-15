@@ -41,7 +41,7 @@ class NotificationController extends Controller
      */
     public function indexAction()
     {
-        // Nothing here, as this will be used as service.
+        // Nothing here, as this controller will be used as service.
     }
 
 

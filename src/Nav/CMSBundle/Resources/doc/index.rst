@@ -21,3 +21,7 @@ Database:
 A database dump is include for trying out this application. Use the symfony.sql
 dump if you want to see this application in action. You could also
 try to run the app/console doctrine:schema:update to update all tables
+
+===
+Todo's:
+- Make the Notification Bundle work at contact page

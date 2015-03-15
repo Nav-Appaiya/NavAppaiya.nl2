@@ -12,7 +12,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Table()
  * @ORM\Entity
  */
-class User implements UserInterface
+class User extends TimestampableEntity implements UserInterface
 {
     /**
      * @var integer

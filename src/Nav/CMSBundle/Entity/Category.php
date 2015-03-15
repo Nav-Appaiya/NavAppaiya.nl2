@@ -11,7 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Table()
  * @ORM\Entity
  */
-class Category
+class Category extends TimestampableEntity
 {
     /**
      * @var integer

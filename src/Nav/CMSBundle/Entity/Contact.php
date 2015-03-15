@@ -8,11 +8,44 @@
 
 namespace Nav\CMSBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+/**
+ * Contact
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class Contact extends TimestampableEntity
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
 
-class Contact {
-
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=50)
+     */
     protected $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=250)
+     */
     protected $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="message", type="text", length=50)
+     */
     protected $message;
 
     /**
