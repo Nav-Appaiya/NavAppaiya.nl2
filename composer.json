@@ -20,7 +20,7 @@
         "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
         "sensio/generator-bundle": "~2.3",
         "incenteev/composer-parameter-handler": "~2.0",
-        "playbloom/guzzle-bundle": "v1.0.4"
+        "guzzlehttp/guzzle": "~5.2"
     },
     "scripts": {
         "post-install-cmd": [
@@ -44,7 +44,7 @@
     "minimum-stability": "stable",
     "extra": {
         "symfony-app-dir": "app",
-        "symfony-web-dir": "web",
+        "symfony-web-dir": "/",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
         },

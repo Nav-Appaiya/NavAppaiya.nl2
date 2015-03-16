@@ -2,20 +2,23 @@
 
 namespace Nav\CMSBundle\Controller;
 
-use GuzzleHttp\Client;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\Validator\Constraints\True;
 
 class TestController extends Controller
 {
     public function indexAction()
     {
-        $bulk = ['something'=> [
-            'key'=>'value'
-        ]];
-        return $this->renderSomething($bulk);
+        $scraper = $this->get('scraper.default_controller');
+        $resultJson = $scraper->feedBurnerURL("http://feeds.feedburner.com/tweakers/mixed");
 
+        echo '<pre>';
+
+        var_dump($resultJson->json(['object' => true]));
+
+        exit;
     }
 
     public function feedBurner($feedUrl)
@@ -37,9 +40,16 @@ class TestController extends Controller
         ]);
     }
 
-    public function renderSomething($values)
+    public function tweeter()
     {
-        return $this->render('@NavCMS/Default/test.html.twig', $values);
+
+        $twitter = $this->get('guzzle.twitter.client');
+        $status = $twitter->post('statuses/update.json',null,  ['status'=> '1jasdoifjasoidjfoaisdjf'])
+            ->send()->json();
+
+        return $this->render('@NavCMS/Default/test.html.twig', array(
+            'status' => $status
+        ));
     }
 
 }

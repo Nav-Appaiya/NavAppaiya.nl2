@@ -1,8 +1,10 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
-    - { resource: twitter.conf.yml }
-    - { resource: twitter.yml }
+    - { resource: twitter.conf.yml } # Twitter Key and Url
+    - { resource: twitter.yml }      # Twitter register Service
+    - { resource: services.yml }      # Services
+
 framework:
     #esi:             ~
     #translator:      { fallbacks: ["%locale%"] }

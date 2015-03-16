@@ -1,3 +1,7 @@
 nav_cms:
     resource: "@NavCMSBundle/Resources/config/routing.yml"
     prefix:   /
+
+nav_scraper:
+    resource: "@NavScraperBundle/Resources/config/routing.yml"
+    prefix:   /scraper

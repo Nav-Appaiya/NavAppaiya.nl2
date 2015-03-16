@@ -17,8 +17,8 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Nav\CMSBundle\NavCMSBundle(),
-            new Playbloom\Bundle\GuzzleBundle\PlaybloomGuzzleBundle(),
             new Nav\NotificationBundle\NavNotificationBundle(),
+            new Nav\ScraperBundle\NavScraperBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
