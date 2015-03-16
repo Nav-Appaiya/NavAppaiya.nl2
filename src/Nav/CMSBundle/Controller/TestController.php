@@ -11,12 +11,17 @@ class TestController extends Controller
 {
     public function indexAction()
     {
+        // http://feeds.feedburner.com/tutsplus/nav
+        // http://feeds.feedburner.com/theverge/nav
+        // http://feeds.feedburner.com/tweakers
+        // http://feeds.feedburner.com/scotch/nav
+
         $scraper = $this->get('scraper.default_controller');
-        $resultJson = $scraper->feedBurnerURL("http://feeds.feedburner.com/tweakers/mixed");
+        $resultJson = $scraper->feedBurnerURL("http://feeds.feedburner.com/tutsplus/nav");
 
         echo '<pre>';
 
-        var_dump($resultJson->json(['object' => true]));
+        var_dump($resultJson);
 
         exit;
     }

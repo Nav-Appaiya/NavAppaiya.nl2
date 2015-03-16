@@ -2,7 +2,7 @@
 
 namespace Nav\ScraperBundle\Controller;
 
-use Guzzle\Service\Client;
+use GuzzleHttp\Client;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
@@ -20,8 +20,8 @@ class DefaultController extends Controller
     public function feedBurnerURL($url)
     {
         $client = new Client();
-        $result = $client->get("http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=100&q=".$url)->send();
+        $result = $client->get("http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=100&q=".$url)->json(['object'=>true]);
 
-        return $result;
+        return $result->responseData->feed->entries;
     }
 }
