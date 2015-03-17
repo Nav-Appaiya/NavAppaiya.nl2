@@ -16,14 +16,9 @@ class TestController extends Controller
         // http://feeds.feedburner.com/tweakers
         // http://feeds.feedburner.com/scotch/nav
 
-        $scraper = $this->get('scraper.default_controller');
-        $resultJson = $scraper->feedBurnerURL("http://feeds.feedburner.com/tutsplus/nav");
-
-        echo '<pre>';
-
-        var_dump($resultJson);
-
+        $this->tweeter();
         exit;
+
     }
 
     public function feedBurner($feedUrl)

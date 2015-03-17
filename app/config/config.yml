@@ -3,7 +3,6 @@ imports:
     - { resource: security.yml }
     - { resource: twitter.conf.yml } # Twitter Key and Url
     - { resource: twitter.yml }      # Twitter register Service
-    - { resource: services.yml }      # Services
 
 framework:
     #esi:             ~

@@ -1,4 +1,4 @@
 # /scraper
 nav_scraper_homepage:
     path:     /
-    defaults: { _controller: NavScraperBundle:Default:indwex }
+    defaults: { _controller: NavScraperBundle:Test:index }

@@ -21,26 +21,14 @@ class DefaultController extends Controller
         $page = $em->getRepository('NavCMSBundle:Page')->find($id);
 
         // Get the articles
-        $articles = $this->getFeedArticles( $page->getFeed() );
+        $feedburner = $this->get('scraper.feedburner');
+        $feedburner->loadFeed($page->getFeed());
 
         return $this->render('NavCMSBundle:Default:display.html.twig', array(
             'page'      => $page,
-            'articles'  => $articles
+            'articles'  => $feedburner->getEntries()
         ));
     }
 
-    /**
-     * RSS to JSON with the
-     * Google API's.
-     *
-     * @param $feed
-     * @return mixed
-     */
-    private function getFeedArticles($feed){
-        $client = new Client();
-        $googleApi = 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&q='.$feed;
-        $response = $client->get($googleApi)->send()->getBody();
 
-        return \GuzzleHttp\json_decode($response)->responseData->feed;
-    }
 }

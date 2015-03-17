@@ -1,3 +1,0 @@
-services:
-    scraper.default_controller:
-        class: Nav\ScraperBundle\Controller\DefaultController
