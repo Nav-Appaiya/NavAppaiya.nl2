@@ -15,8 +15,17 @@ class TestController extends Controller
         // http://feeds.feedburner.com/theverge/nav
         // http://feeds.feedburner.com/tweakers
         // http://feeds.feedburner.com/scotch/nav
+        // tweets @usbstikje
+        //$this->tweeter()
 
-        $this->tweeter();
+        $chuck = $this->get('scraper.chuck_norris');
+        $twitter = $this->get('guzzle.twitter.client');
+
+        $status = $twitter->post('statuses/update.json', null, [
+            'status' => $chuck->getOneRandomChuckNorrisJoke()
+        ]);
+
+        var_dump($status->send());
         exit;
 
     }

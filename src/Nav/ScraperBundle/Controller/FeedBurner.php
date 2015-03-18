@@ -8,9 +8,18 @@
 
 namespace Nav\ScraperBundle\Controller;
 
-
 use GuzzleHttp\Client;
 
+/**
+ * Class FeedBurner
+ * @package Nav\ScraperBundle\Controller
+ *
+ * So, Feedburner takes the regular RSS feed your
+ * blog creates (your blog creates this automatically
+ * most of the time) and grabs it, gives it a new
+ * address, tracks anyone who subscribes to that
+ * address, and provides other nerdy goodies.
+ */
 class FeedBurner
 {
     protected $client;
