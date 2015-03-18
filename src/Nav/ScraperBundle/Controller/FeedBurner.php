@@ -29,11 +29,13 @@ class FeedBurner
     {
         $this->client = new Client();
     }
-    public function loadFeed($url){
+
+    public function loadFeed($url)
+    {
         $googleApi = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=100&q=";
         $resultObject = ['object' => false];
 
-        $result = $this->client->get($googleApi.$url);
+        $result = $this->client->get($googleApi . $url);
         $filter = $result->json($resultObject);
 
         $responseData = $filter['responseData'];
@@ -73,7 +75,8 @@ class FeedBurner
      */
     public function getOneEntry()
     {
-        return $this->entries[0];
+        $total = count($this->entries)-1;
+        return $this->entries[$total];
     }
 
     /**
@@ -91,8 +94,6 @@ class FeedBurner
     {
         return isset($this->entries) ? count($this->entries) : "No entries loaded, first load the feed";
     }
-
-
 
 
 }
