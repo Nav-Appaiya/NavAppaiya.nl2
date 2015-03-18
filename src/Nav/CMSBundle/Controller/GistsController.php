@@ -27,7 +27,9 @@ class GistsController extends Controller
     public function getGists()
     {
         $client = new Client();
-        return $client->get('https://api.github.com/users/nav-appaiya/gists')->json();
+        return $client->get('https://api.github.com/users/nav-appaiya/gists', [
+            'verify'=>false
+        ])->json();
     }
 
 }

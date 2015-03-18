@@ -1,3 +1,16 @@
+# Login @See security.yml
+login:
+    path: /login
+    defaults: { _controller: NavCMSBundle:Security:login }
+
+# Login check
+login_check:
+    path: /login_check
+
+# Logout
+logout:
+    path: /logout
+
 # Usbstikje
 nav_usbstikje:
     path: /usbstikje
@@ -22,3 +35,5 @@ nav_test:
 nav_gists:
     path: /gists
     defaults: { _controller: NavCMSBundle:Gists:index }
+
+

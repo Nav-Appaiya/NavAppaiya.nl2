@@ -1,37 +1,16 @@
 #Generated Page Crud
 nav_cms_cms_page:
     resource: "@NavCMSBundle/Resources/config/routing/page.yml"
-    prefix:   /cms/page
+    prefix:   /page
 
 # Generated Category Crud
 nav_cms_cms_category:
     resource: "@NavCMSBundle/Resources/config/routing/category.yml"
-    prefix:   /cms/category
+    prefix:   /category
 
 # Generated User Crud
 nav_cms_cms_user:
     resource: "@NavCMSBundle/Resources/config/routing/user.yml"
-    prefix:   /cms/user
+    prefix:   /user
 
-# Homepage
-nav_cms_homepage:
-    path:     /
-    defaults: { _controller: NavCMSBundle:Default:index }
 
-# Display a Page
-nav_cms_page_display:
-    path: /page/{id}
-    defaults: { _controller: NavCMSBundle:Default:display }
-
-# Login @See security.yml
-login:
-    path: /login
-    defaults: { _controller: NavCMSBundle:Security:login }
-
-# Login check
-login_check:
-    path: /login_check
-
-# Logout
-logout:
-    path: /logout
