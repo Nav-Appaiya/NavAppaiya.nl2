@@ -6,6 +6,7 @@
 
 #idea PHPStorm!
 .idea
+.phpintel
 
 # Cache and logs (Symfony3)
 /var/cache/*
