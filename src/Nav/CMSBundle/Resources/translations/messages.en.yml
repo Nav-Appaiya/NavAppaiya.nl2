@@ -1,0 +1,11 @@
+navigation:
+    news: News
+    gists: Gists
+    about: About
+    contact: Contact
+
+stay:
+    awsome: Stay Awsome
+    gisted: Stay Gisted
+
+News: water
