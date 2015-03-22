@@ -30,6 +30,30 @@ use Symfony\Component\Validator\Constraints\True;
 class UsbstikController extends Controller{
 
 
+    public function indexAction()
+    {
+        return $this->render('NavCMSBundle:Tweets:index.html.twig',[
+            'tweets' => $this->getTweets()
+        ]);
+    }
+
+    public function getTweets()
+    {
+        $twitter = $this->get('guzzle.twitter.client');
+        $statuses = $twitter->get('statuses/user_timeline.json')->send()->json();
+
+        foreach ($statuses as $status) {
+            $tweets[] = $status;
+        }
+
+        return $tweets;
+
+    }
+
+
+
+
+
     /**
      * - /usbstikje
      */
@@ -38,6 +62,7 @@ class UsbstikController extends Controller{
         $tweet = $this->getLuckyTweetPost();
         $shortUrl = $this->getGooglShortUrl($tweet['link']);
         $composedTweet = substr($tweet['title'], 0, 120) . ' - ' . $shortUrl->id;
+
         $response = $this->tweetThis($composedTweet);
 
         if($response !== 200){

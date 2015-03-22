@@ -11,11 +11,6 @@ login_check:
 logout:
     path: /logout
 
-# Usbstikje
-nav_usbstikje:
-    path: /usbstikje
-    defaults: { _controller: NavCMSBundle:Usbstik:start }
-
 # About
 nav_about:
     path: /about
@@ -26,14 +21,17 @@ nav_contact:
     path: /contact
     defaults: { _controller: NavCMSBundle:Contact:index }
 
-# Test
-nav_test:
-    path: /test
-    defaults: { _controller: NavCMSBundle:Test:index }
-
 # Gists page
 nav_gists:
     path: /gists
     defaults: { _controller: NavCMSBundle:Gists:index }
 
+# Test
+nav_test:
+    path: /test
+    defaults: { _controller: NavCMSBundle:Test:index }
 
+# Tweet [this will be hit by cron]
+nav_tweet:
+    path: /tweet
+    defaults: { _controller: NavCMSBundle:Usbstik:start }
