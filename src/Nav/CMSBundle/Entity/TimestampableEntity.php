@@ -9,7 +9,12 @@
 namespace Nav\CMSBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
-
+/**
+ * Class TimestampableEntity
+ * @package Nav\CMSBundle\Entity
+ * @ORM\MappedSuperclass
+ * @ORM\HasLifecycleCallbacks
+ */
 class TimestampableEntity {
 
     /**

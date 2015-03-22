@@ -12,9 +12,11 @@ namespace Nav\CMSBundle\Controller;
 
 
 use GuzzleHttp\Client;
+use Nav\CMSBundle\Entity\Joke;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Constraints\True;
 
 /**
@@ -30,9 +32,45 @@ use Symfony\Component\Validator\Constraints\True;
 class UsbstikController extends Controller{
 
 
-    public function indexAction()
+    public function indexAction(Request $request)
     {
+        $notifications = array();
+        $joke = new Joke();
+        $form = $this->createFormBuilder($joke)
+            ->add('firstName', 'text', array('label' => 'First name:'))
+            ->add('lastName', 'text', array('label' => 'Last name: '))
+            ->add('save', 'submit', array(
+                'label'=> 'Tweet',
+                'attr' => array('class' => 'btn btn-danger btn-sm')
+            ))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $chucknorris = $this->get('scraper.chuck_norris');
+            $twitter = $this->get('guzzle.twitter.client');
+
+            $personalJoke = $chucknorris->makeOneChuckNorrisJokeByName(
+                $joke->getFirstName(),
+                $joke->getLastName()
+            );
+            $joke->setJoke($personalJoke);
+            $this->tweetThis($personalJoke);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($joke);
+            $em->flush();
+
+            $notifications = $this->get('nav.notification');
+            $notifications->add("notifications", array("title" => "Success", "message" => "Personal Shots have been fired!"));
+
+        }
+
+
         return $this->render('NavCMSBundle:Tweets:index.html.twig',[
+            'notifications' => $notifications,
+            'joke' => $form->createView(),
             'tweets' => $this->getTweets()
         ]);
     }
@@ -47,11 +85,7 @@ class UsbstikController extends Controller{
         }
 
         return $tweets;
-
     }
-
-
-
 
 
     /**

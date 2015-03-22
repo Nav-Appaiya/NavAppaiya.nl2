@@ -6,12 +6,6 @@ nav_cms:
     resource: "@NavCMSBundle/Resources/config/routing/navigation.yml"
     prefix:   /cms
 
-nav_scraper:
-    resource: "@NavScraperBundle/Resources/config/routing.yml"
-    prefix:   /scraper
-
-
-
 # Homepage
 nav_cms_homepage:
     path:     /
