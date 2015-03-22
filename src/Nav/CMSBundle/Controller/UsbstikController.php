@@ -34,7 +34,7 @@ class UsbstikController extends Controller{
 
     public function indexAction(Request $request)
     {
-        $notifications = array();
+        $notifications = "";
         $joke = new Joke();
         $form = $this->createFormBuilder($joke)
             ->add('firstName', 'text', array('label' => 'First name:'))
