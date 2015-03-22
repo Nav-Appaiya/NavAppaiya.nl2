@@ -18,6 +18,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Constraints\True;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * Class UsbstikController
@@ -34,7 +35,6 @@ class UsbstikController extends Controller{
 
     public function indexAction(Request $request)
     {
-        $notifications = "";
         $joke = new Joke();
         $form = $this->createFormBuilder($joke)
             ->add('firstName', 'text', array('label' => 'First name:'))
@@ -64,12 +64,12 @@ class UsbstikController extends Controller{
 
             $notifications = $this->get('nav.notification');
             $notifications->add("notifications", array("title" => "Success", "message" => "Personal Shots have been fired!"));
+            return $this->redirect($this->generateUrl('nav_usbstikje'));
 
         }
 
 
         return $this->render('NavCMSBundle:Tweets:index.html.twig',[
-            'notifications' => $notifications,
             'joke' => $form->createView(),
             'tweets' => $this->getTweets()
         ]);

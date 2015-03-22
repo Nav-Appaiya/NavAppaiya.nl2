@@ -3,14 +3,14 @@
 {% form_theme joke 'NavCMSBundle:Form:bootstrap_3_horizontal_layout.html.twig' %}
 
 {% block body -%}
-    <h1 class="page-header">Tweets overview</h1>
-    {% if notifications is defined %}
+        <h1 class="page-header">Tweets overview</h1>
+    {% if  notifications is defined %}
         <div class="alert alert-dismissible alert-success">
-            {% for notification in notifications.get('notifications') %}
-                <button type="button" class="close" data-dismiss="alert">x</button>
-                <h4>{{ notification.title }}</h4>
-                <p>{{ notification.message }}</p>
-            {% endfor %}
+                {% for notification in notifications.get('notifications') %}
+                    <button type="button" class="close" data-dismiss="alert">x</button>
+                    <h4>{{ notification.title }}</h4>
+                    <p>{{ notification.message }}</p>
+                {% endfor %}
         </div>
     {% endif %}
     <div class="well">
