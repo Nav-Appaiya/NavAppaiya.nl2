@@ -31,7 +31,7 @@ class UsbstikController extends Controller{
 
 
     /**
-     * - selectRandomSource: returns a tweet from a random source
+     * - /usbstikje
      */
     public function startAction()
     {
@@ -46,7 +46,6 @@ class UsbstikController extends Controller{
 
         var_dump($response);
         exit;
-
     }
 
     /**
@@ -105,6 +104,13 @@ class UsbstikController extends Controller{
             'object'=>true
         ]);
 
+    }
+
+
+    public function getOneChuckNorrisJoke(){
+        $chuck  = $this->get('scraper.chuck_norris');
+
+        return $chuck->getOneRandomChuckNorrisJoke();
     }
 
 

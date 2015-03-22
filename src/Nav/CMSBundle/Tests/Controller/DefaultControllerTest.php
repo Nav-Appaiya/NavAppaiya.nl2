@@ -4,7 +4,7 @@ namespace Nav\CMSBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class DefaultControllerTest extends WebTestCase
+class DefaultControllerTest extends PHP-
 {
     public function testIndex()
     {
