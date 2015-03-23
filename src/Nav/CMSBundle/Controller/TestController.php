@@ -2,6 +2,7 @@
 
 namespace Nav\CMSBundle\Controller;
 
+use GuzzleHttp\Client;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -17,17 +18,11 @@ class TestController extends Controller
         // http://feeds.feedburner.com/scotch/nav
         // tweets @usbstikje
         //$this->tweeter()
+        
+        die('testcontroller ');
 
-        $chuck = $this->get('scraper.chuck_norris');
-        $twitter = $this->get('guzzle.twitter.client');
 
-        $status = $twitter->post('statuses/update.json', null, [
-            'status' => $chuck->getOneRandomChuckNorrisJoke()
-        ]);
-
-        var_dump($status->send());
         exit;
-
     }
 
     public function feedBurner($feedUrl)

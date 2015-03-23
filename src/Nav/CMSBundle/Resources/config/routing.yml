@@ -35,3 +35,7 @@ nav_test:
 nav_tweet:
     path: /tweet
     defaults: { _controller: NavCMSBundle:Usbstik:start }
+
+nav_search:
+    path: /search
+    defaults: { _controller: NavCMSBundle:Search:index }

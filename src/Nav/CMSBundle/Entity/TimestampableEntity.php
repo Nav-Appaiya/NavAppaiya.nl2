@@ -15,7 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\MappedSuperclass
  * @ORM\HasLifecycleCallbacks
  */
-class TimestampableEntity {
+abstract class TimestampableEntity {
 
     /**
      * @ORM\Column(type="datetime")
