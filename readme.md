@@ -11,8 +11,7 @@ Login at /login to manage:
 The theme used in this project is the Cyborg Theme from Bootswatch.com
 https://bootswatch.com/
 
-An example page backend: 
-
-![Alt text](https://raw.githubusercontent.com/Nav-Appaiya/NavAppaiya.nl/master/screenshots/page-edit.png)
-
-Bundle is mainly for development/testing.
+Future feature-list:
+    - Youtube Video Downloader
+    - Soundcloud connect and get your playlist
+    - Manage the TweetBot and its behavior
