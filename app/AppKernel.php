@@ -18,7 +18,8 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Nav\CMSBundle\NavCMSBundle(),
             new Nav\NotificationBundle\NavNotificationBundle(),
-            new Nav\ScraperBundle\NavScraperBundle()
+            new Nav\ScraperBundle\NavScraperBundle(),
+            new FOS\UserBundle\FOSUserBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -1,6 +1,4 @@
-{% extends '::base.html.twig' %}
-
-{% form_theme form 'NavCMSBundle:Form:bootstrap_3_horizontal_layout.html.twig' %}
+{% extends '@NavCMS/layout.html.twig' %}
 
 
 {% block body %}
@@ -9,8 +7,9 @@
             <div class="page-header" id="banner">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
-                        <h1>Contact</h1>
-                        <p class="lead">Stay connected.</p>
+                        <h1>Youtube Downloader</h1>
+
+                        <p class="lead">Stay downloading.</p>
                     </div>
                 </div>
             </div>
@@ -18,12 +17,10 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            {% if app.session.flashBag.get('success') != null %}
-                {{ dump(app.session.flashBag.all) }}
-            {% endif %}
-
-
-            {{ form(form) }}
+            {{ form_start(form) }}
+            {{ form_row(form.url) }}
+            {{ form_row(form.download) }}
+            {{ form_end(form) }}
         </div>
     </div>
 {% endblock %}

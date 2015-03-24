@@ -3,6 +3,7 @@
 namespace Nav\CMSBundle\Controller;
 
 use GuzzleHttp\Client;
+use Nekland\YoutubeApi\Youtube;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -12,17 +13,8 @@ class TestController extends Controller
 {
     public function indexAction()
     {
-        // http://feeds.feedburner.com/tutsplus/nav
-        // http://feeds.feedburner.com/theverge/nav
-        // http://feeds.feedburner.com/tweakers
-        // http://feeds.feedburner.com/scotch/nav
-        // tweets @usbstikje
-        //$this->tweeter()
-        
-        die('testcontroller ');
 
-
-        exit;
+        return $this->render('@NavCMS/Media/youtube.html.twig');
     }
 
     public function feedBurner($feedUrl)
@@ -54,6 +46,17 @@ class TestController extends Controller
         return $this->render('@NavCMS/Default/test.html.twig', array(
             'status' => $status
         ));
+    }
+
+    public function feedsCollection()
+    {
+        // http://feeds.feedburner.com/tutsplus/nav
+        // http://feeds.feedburner.com/theverge/nav
+        // http://feeds.feedburner.com/tweakers
+        // http://feeds.feedburner.com/scotch/nav
+        // tweets @usbstikje
+        //$this->tweeter()
+        die('test');
     }
 
 }

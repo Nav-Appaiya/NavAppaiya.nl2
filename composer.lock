@@ -4,8 +4,44 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fa960034e906ecf4bfe2c1008e9379c2",
+    "hash": "3e9e71fd2d24d06905d27fbbbbb03411",
     "packages": [
+        {
+            "name": "chellem/youtube-downloader",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chellem/youtube-dl-php.git",
+                "reference": "4d52c40bcc762d367b01ca40523dc67896414d29"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chellem/youtube-dl-php/zipball/4d52c40bcc762d367b01ca40523dc67896414d29",
+                "reference": "4d52c40bcc762d367b01ca40523dc67896414d29",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/process": ">=2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Youtubedl": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Chellem"
+                }
+            ],
+            "description": "PHP library to download video",
+            "keywords": [
+                "download",
+                "youtube"
+            ],
+            "time": "2014-06-02 17:27:13"
+        },
         {
             "name": "doctrine/annotations",
             "version": "v1.2.3",
@@ -1863,7 +1899,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "friendsofsymfony/user-bundle": 20
+        "friendsofsymfony/user-bundle": 20,
+        "chellem/youtube-downloader": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

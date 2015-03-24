@@ -21,7 +21,8 @@
         "sensio/generator-bundle": "~2.3",
         "incenteev/composer-parameter-handler": "~2.0",
         "guzzlehttp/guzzle": "~5.2",
-        "friendsofsymfony/user-bundle": "~2.0@dev"
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "chellem/youtube-downloader": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
