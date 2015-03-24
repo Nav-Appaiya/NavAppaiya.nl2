@@ -43,3 +43,7 @@ nav_search:
 nav_youtube:
     path: /youtube
     defaults: { _controller: NavCMSBundle:Youtube:index }
+
+nav_soundcloud:
+    path: /soundcloud
+    defaults: { _controller: NavCMSBundle:Soundcloud:index }
