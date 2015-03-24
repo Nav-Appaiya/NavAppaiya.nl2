@@ -40,6 +40,8 @@
                 </li>
                 <li class="{% if app.request.attributes.get('_route') == 'nav_gists' %}active{% endif %}"><a
                             href="{{ path('nav_gists') }}">{{ 'navigation.gists'|trans }}</a></li>
+                <li class="{% if app.request.attributes.get('_route') == 'nav_youtube' %}active{% endif %}"><a
+                            href="{{ path('nav_youtube') }}">{{ 'navigation.youtube'|trans }}</a></li>
                 <li class="{% if app.request.attributes.get('_route') == 'nav_about' %}active{% endif %}"><a
                             href="{{ path('nav_about') }}">About</a></li>
                 <li class="{% if app.request.attributes.get('_route') == 'nav_contact' %}active{% endif %}"><a
