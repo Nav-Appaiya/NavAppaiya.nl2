@@ -1,8 +1,9 @@
 A CMS with Symfony
 ========================
-A simple Content Management System in Symfony.
+A simple Content Management System in Symfony and 
+a Symfony2 build for development purposes. 
 
-Login at /login to manage:
+CMS Login at /login to manage:
 - Users
 - Pages
 - Categories
@@ -15,3 +16,4 @@ Future feature-list:
     - Youtube Video Downloader
     - Soundcloud connect and get your playlist
     - Manage the TweetBot and its behavior
+    
