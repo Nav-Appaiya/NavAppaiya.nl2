@@ -1,0 +1,3 @@
+nav_send_grid_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: NavSendGridBundle:Default:index }

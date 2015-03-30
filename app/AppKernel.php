@@ -19,7 +19,8 @@ class AppKernel extends Kernel
             new Nav\CMSBundle\NavCMSBundle(),
             new Nav\NotificationBundle\NavNotificationBundle(),
             new Nav\ScraperBundle\NavScraperBundle(),
-            new FOS\UserBundle\FOSUserBundle()
+            new FOS\UserBundle\FOSUserBundle(),
+            new Nav\SendGridBundle\NavSendGridBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
