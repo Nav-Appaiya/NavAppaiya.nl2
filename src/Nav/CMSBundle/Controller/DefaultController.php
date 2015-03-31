@@ -9,7 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class DefaultController extends Controller
 {
     public function indexAction() {
-
+        $tracking = $this->get('tracker');
+        $tracking->trackVisit();    
         $em = $this->getDoctrine()->getManager();
         $pages = $em->getRepository('NavCMSBundle:Page')->findAll();
 
