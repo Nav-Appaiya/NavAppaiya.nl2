@@ -16,4 +16,3 @@ Future feature-list:
     - Youtube Video Downloader
     - Soundcloud connect and get your playlist
     - Manage the TweetBot and its behavior
-    
