@@ -17,7 +17,6 @@ class GistsController extends Controller
 
     public function indexAction()
     {
-
         return $this->render('@NavCMS/Gists/index.html.twig', [
             'gists' => $this->getGists()
         ]);

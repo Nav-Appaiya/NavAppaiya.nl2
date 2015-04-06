@@ -22,7 +22,7 @@
             {#</div>#}
 
             {% for badge in badges %}
-                <img src="{{ badge.imageUrl }}" alt="badge" class="badges pull-left"/>
+                <img src="{{ badge.imageUrl }}" alt="badge" class="badges img-responsive pull-left"/>
                 <blockquote class="pull-left">
                     <h3>{{ badge.assertion.badge.name }}</h3>
                     <p>{{ badge.assertion.badge.description }}</p>
