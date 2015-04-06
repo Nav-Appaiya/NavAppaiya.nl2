@@ -15,9 +15,9 @@
             {% for entry in articles %}
                     <div class="panel-body">
                         <a class="btn btn-default btn-block" href="{{ entry.link }}">
-                            <h5>{{ entry.title }} <br/>
+                            <h4 class="white">{{ entry.title }} <br/>
                                 <small>{{ entry.author }} - {{ entry.publishedDate|date('d/m/Y H:i', timezone="Europe/Amsterdam") }}</small>
-                            </h5>
+                            </h4>
                             {% for category in entry.categories %}
                                 {{ category }}
                             {% endfor %}
