@@ -16,46 +16,18 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="alert alert-dismissible alert-danger">
-                <button type="button" class="close" data-dismiss="alert">×</button>
-                <strong>Oh snap!</strong> <a href="#" class="alert-link">Page is not finished yet.</a> <br/>
-            </div>
-            <h4>Customer</h4>
-            <p>
-                Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C
-                users after installed base benefits. Dramatically visualize customer directed convergence without
-                revolutionary ROI.
+            {#<div class="alert alert-dismissible alert-danger">#}
+                {#<button type="button" class="close" data-dismiss="alert">×</button>#}
+                {#<strong>Oh snap!</strong> <a href="#" class="alert-link">Page is not finished yet.</a> <br/>#}
+            {#</div>#}
 
-            </p>
+            {% for badge in badges %}
+                <img src="{{ badge.imageUrl }}" alt="badge" class="badges pull-left"/>
+                <blockquote class="pull-left">
+                    <h3>{{ badge.assertion.badge.name }}</h3>
+                    <p>{{ badge.assertion.badge.description }}</p>
+                    <small>Achieved on {{ badge.assertion.issued_on }}</small>
+                </blockquote>
 
-            <h4>Schemas</h4>
-            <p>
-                Efficiently unleash cross-media information without cross-media value. Quickly maximize timely
-                deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional
-                solutions.
-
-            </p>
-
-            <h4>Robust Ideas</h4>
-            <p>Completely synergize resource sucking relationships via premier niche markets. Professionally cultivate
-                one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service
-                for state of the art customer service.</p>
-
-            <h4>vis-a-vis</h4>
-            <p>
-                Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate
-                extensible testing procedures for reliable supply chains. Dramatically engage top-line web services
-                vis-a-vis cutting-edge deliverables.
-            </p>
-
-
-            <blockquote class="pull-right">
-                <p>
-                    <cite title="Source Title"></cite></small></p>
-            </blockquote>
-            <blockquote class="pull-right">
-                <p>Yes indeed, still have to write some content for my about page, but I will do it Tomorrow.</p>
-                <small>Me, <cite title="Source Title">and every Student Ever</cite></small>
-            </blockquote>
-    </div>
+            {% endfor %}
 {% endblock %}
