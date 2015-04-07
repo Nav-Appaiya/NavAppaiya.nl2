@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b42d2617d6160e81e4504cbf67065f24",
+    "hash": "9e421be82f1e15f89419996ac94e9819",
     "packages": [
         {
             "name": "chellem/youtube-downloader",
@@ -1656,6 +1656,63 @@
             "time": "2012-08-16 17:13:03"
         },
         {
+            "name": "knplabs/knp-last-tweets-bundle",
+            "version": "1.0",
+            "target-dir": "Knp/Bundle/LastTweetsBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/KnpLastTweetsBundle.git",
+                "reference": "5f031e98d517dd398cb6cd3b4007b41c22a74f45"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/KnpLastTweetsBundle/zipball/5f031e98d517dd398cb6cd3b4007b41c22a74f45",
+                "reference": "5f031e98d517dd398cb6cd3b4007b41c22a74f45",
+                "shasum": ""
+            },
+            "require": {
+                "kriswallsmith/buzz": ">=v0.5",
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": ">=2.0.0",
+                "symfony/yaml": "*",
+                "twig/twig": ">=1.6.5"
+            },
+            "require-dev": {
+                "inori/twitter-app-bundle": "*",
+                "knplabs/knp-zend-cache-bundle": "*"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Knp\\Bundle\\LastTweetsBundle": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KnpLabs Team",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://github.com/KnpLabs/KnpLastTweetsBundle/contributors"
+                }
+            ],
+            "description": "Symfony2 bundle to easily add a widget with the latest tweets of a Twitter user to a page.",
+            "homepage": "http://github.com/KnpLabs/KnpLastTweetsBundle",
+            "keywords": [
+                "bundle",
+                "knp",
+                "knplabs",
+                "tweets",
+                "twitter"
+            ],
+            "time": "2012-07-25 13:58:31"
+        },
+        {
             "name": "kriswallsmith/assetic",
             "version": "v1.2.1",
             "source": {
@@ -1728,6 +1785,54 @@
                 "minification"
             ],
             "time": "2014-12-12 05:04:05"
+        },
+        {
+            "name": "kriswallsmith/buzz",
+            "version": "v0.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kriswallsmith/Buzz.git",
+                "reference": "487760b05d6269a4c2c374364325326cfa65b12c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kriswallsmith/Buzz/zipball/487760b05d6269a4c2c374364325326cfa65b12c",
+                "reference": "487760b05d6269a4c2c374364325326cfa65b12c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "suggest": {
+                "ext-curl": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Buzz": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kris Wallsmith",
+                    "email": "kris.wallsmith@gmail.com",
+                    "homepage": "http://kriswallsmith.net/"
+                }
+            ],
+            "description": "Lightweight HTTP client",
+            "homepage": "https://github.com/kriswallsmith/Buzz",
+            "keywords": [
+                "curl",
+                "http client"
+            ],
+            "time": "2014-09-15 12:42:36"
         },
         {
             "name": "monolog/monolog",
