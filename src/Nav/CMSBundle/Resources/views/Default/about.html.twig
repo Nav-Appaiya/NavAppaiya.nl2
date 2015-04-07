@@ -16,18 +16,21 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            {#<div class="alert alert-dismissible alert-danger">#}
-                {#<button type="button" class="close" data-dismiss="alert">×</button>#}
-                {#<strong>Oh snap!</strong> <a href="#" class="alert-link">Page is not finished yet.</a> <br/>#}
-            {#</div>#}
 
-            {% for badge in badges %}
-                <img src="{{ badge.imageUrl }}" alt="badge" class="badges img-responsive pull-left"/>
-                <blockquote class="pull-left">
-                    <h3>{{ badge.assertion.badge.name }}</h3>
-                    <p>{{ badge.assertion.badge.description }}</p>
-                    <small>Achieved on {{ badge.assertion.issued_on }}</small>
-                </blockquote>
+                {% for row in badges|batch(2) %}
+                        <div class="row">
+                            {% for badge in row %}
+                                <div class="col-md-6">
+                                    <img src="{{ badge.imageUrl }}" alt="badge"
+                                         class="badges img-responsive pull-left"/>
+                                    <blockquote class="pull-left">
+                                        <h3>{{ badge.assertion.badge.name }}</h3>
 
-            {% endfor %}
+                                        <p>{{ badge.assertion.badge.description }}</p>
+                                        <small>Achieved on {{ badge.assertion.issued_on }}</small>
+                                    </blockquote>
+                                </div>
+                            {% endfor %}
+                        </div>
+                {% endfor %}
 {% endblock %}

@@ -20,9 +20,18 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 
+/**
+ * Class YoutubeController
+ *
+ * @package Nav\CMSBundle\Controller
+ */
 class YoutubeController extends Controller
 {
 
+    /**
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
     public function indexAction(Request $request) {
 
         $youtube = new Youtube();
@@ -48,6 +57,10 @@ class YoutubeController extends Controller
         ]);
     }
 
+    /**
+     * @param $url
+     * @return string
+     */
     public function getCleanVideoId($url)
     {
         // https://www.youtube.com/watch?v=uBRhI4Rn7hQ
@@ -62,6 +75,10 @@ class YoutubeController extends Controller
         return $final;
     }
 
+    /**
+     * @param $youtube
+     * @return \Symfony\Component\Form\Form
+     */
     public function youtubeToMp4Form($youtube)
     {
         $form = $this->createFormBuilder($youtube)

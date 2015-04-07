@@ -43,3 +43,6 @@
 /composer.phar
 composer.lock
 /nbproject/private/
+bin
+vendor
+output

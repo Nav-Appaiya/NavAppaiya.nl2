@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class DefaultController extends Controller
 {
     public function indexAction() {
+        $this->track();
         $em = $this->getDoctrine()->getManager();
         $pages = $em->getRepository('NavCMSBundle:Page')->findAll();
 
@@ -29,6 +30,27 @@ class DefaultController extends Controller
             'page'      => $page,
             'articles'  => $feedburner->getEntries()
         ));
+    }
+
+    private function track()
+    {
+        $host   = gethostname();
+        $ip     = $this->get('request')->getClientIp();
+        $path   = $this->getRequest()->getRequestUri();
+        $info   = $this->get('request')->getPathInfo();
+
+        $visitor = new Visitor();
+        $visitor->setHostname($host);
+        $visitor->setIp($ip);
+        $visitor->setPath($path);
+        $visitor->setInfo($info);
+
+        $em = $this->getDoctrine()->getManager();
+        if($ip == '127.0.0.1')
+        {
+            $em->persist($visitor);
+        }
+        $em->flush();
     }
 
 }

@@ -35,6 +35,52 @@ class Visitor extends TimestampableEntity
      */
     private $ip;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="path", type="string", length=255)
+     */
+    private $path;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="info", type="string", length=255)
+     */
+    private $info;
+
+    /**
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    /**
+     * @param string $path
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInfo()
+    {
+        return $this->info;
+    }
+
+    /**
+     * @param string $info
+     */
+    public function setInfo($info)
+    {
+        $this->info = $info;
+    }
+
 
     /**
      * Get id

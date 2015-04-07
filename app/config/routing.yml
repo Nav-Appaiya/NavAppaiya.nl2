@@ -22,3 +22,7 @@ nav_cms_homepage:
 nav_cms_page_display:
     path: /page/{id}
     defaults: { _controller: NavCMSBundle:Default:display }
+
+nav_sendgrid:
+    path: /sendgrid
+    defaults: { _controller: NavSendGridBundle:Default:index }

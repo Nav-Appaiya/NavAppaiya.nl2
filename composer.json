@@ -22,7 +22,8 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "guzzlehttp/guzzle": "~5.2",
         "friendsofsymfony/user-bundle": "~2.0@dev",
-        "chellem/youtube-downloader": "dev-master"
+        "chellem/youtube-downloader": "dev-master",
+        "phpdocumentor/phpdocumentor": "2.*"
     },
     "scripts": {
         "post-install-cmd": [
