@@ -23,7 +23,8 @@
         "guzzlehttp/guzzle": "~5.2",
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "chellem/youtube-downloader": "dev-master",
-        "phpdocumentor/phpdocumentor": "2.*"
+        "phpdocumentor/phpdocumentor": "2.*",
+        "knplabs/knp-last-tweets-bundle": "*"
     },
     "scripts": {
         "post-install-cmd": [
