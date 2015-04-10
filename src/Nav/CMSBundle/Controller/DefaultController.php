@@ -46,10 +46,7 @@ class DefaultController extends Controller
         $visitor->setInfo($info);
 
         $em = $this->getDoctrine()->getManager();
-        if($ip == '127.0.0.1')
-        {
-            $em->persist($visitor);
-        }
+        $em->persist($visitor);
         $em->flush();
     }
 
