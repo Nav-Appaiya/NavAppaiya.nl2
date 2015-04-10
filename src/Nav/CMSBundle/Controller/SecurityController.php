@@ -4,6 +4,7 @@ namespace Nav\CMSBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Core\SecurityContextInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class SecurityController extends Controller
 {
@@ -39,6 +40,19 @@ class SecurityController extends Controller
                 'error'         => $error,
             )
         );
+    }
+
+
+    /**
+     * Used to render custom layout for login
+     * form, overriding the default FOSBundle login view.
+     *
+     * @return \Nav\CMSBundle\Controller\Response
+     */
+    public function getTokenAction()
+    {
+        return new Response($this->container->get('form.csrf_provider')
+            ->generateCsrfToken('authenticate'));
     }
 
 }

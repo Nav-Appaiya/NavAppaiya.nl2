@@ -11,12 +11,16 @@ use Symfony\Component\Validator\Constraints\True;
 
 class TestController extends Controller
 {
+    /**
+     * URL: /test
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function indexAction()
     {
         // Get the video link and redirect me to there please
         // Youtube link code => uBRhI4Rn7hQ
         // URL: navappaiya.nl/bin/getvideo?videoid=uBRhI4Rn7hQ&format=free
-
+        return $this->render('@NavCMS/Default/test.html.twig');
     }
 
     public function feedBurner($feedUrl)

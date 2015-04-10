@@ -4,6 +4,8 @@ navigation:
     about: About
     contact: Contact
     youtube: Youtube
+    login: Login
+    tools: Tools
 
 stay:
     awsome: Stay Awsome
