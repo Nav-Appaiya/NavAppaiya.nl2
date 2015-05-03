@@ -1,3 +1,7 @@
+nav_seo_shop:
+    resource: "@NavSEOShopBundle/Resources/config/routing.yml"
+    prefix:   /seoshop
+
 nav_send_grid:
     resource: "@NavSendGridBundle/Resources/config/routing.yml"
     prefix:   /

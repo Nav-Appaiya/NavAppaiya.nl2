@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Nav\ScraperBundle\NavScraperBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Nav\SendGridBundle\NavSendGridBundle(),
+            new Nav\SEOShopBundle\NavSEOShopBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
