@@ -2,7 +2,6 @@
 
 namespace Nav\CMSBundle\Controller;
 
-use Guzzle\Http\Client;
 use Nav\CMSBundle\Entity\Visitor;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -46,7 +45,9 @@ class DefaultController extends Controller
         $visitor->setInfo($info);
 
         $em = $this->getDoctrine()->getManager();
-        $em->persist($visitor);
+        if($ip != '127.0.0.1'){
+            $em->persist($visitor);
+        }
         $em->flush();
     }
 

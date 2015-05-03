@@ -33,13 +33,10 @@ class ContactController extends Controller{
             $contact->updatedTimestamps();
             $em->persist($contact);
             $em->flush();
+            $notify = $this->get('nav.notification');
+            $notify->add("success", array("type" => "flash", "message" => "Thank you for filling out our contact form!"));
             return $this->redirect($this->generateUrl('nav_contact'));
         }
-        $notify = $this->get('nav.notification');
-
-        $notify->add("success", array("type" => "flash", "message" => "Thank you for filling out our contact form!"));
-
-
 
         return $this->render('NavCMSBundle:Default:contact.html.twig', [
             'form'=> $form->createView()
