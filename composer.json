@@ -25,7 +25,8 @@
         "chellem/youtube-downloader": "dev-master",
         "phpdocumentor/phpdocumentor": "2.*",
         "knplabs/knp-last-tweets-bundle": "*",
-        "abraham/twitteroauth": "*"
+        "abraham/twitteroauth": "*",
+        "cloudconvert/cloudconvert-php": "*"
     },
     "scripts": {
         "post-install-cmd": [

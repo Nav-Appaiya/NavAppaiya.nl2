@@ -13,3 +13,6 @@ _configurator:
 _main:
     resource: routing.yml
 
+phpinfo:
+    path: /phpinfo
+    defaults: { _controller: NavCMSBundle:Default:phpinfo }

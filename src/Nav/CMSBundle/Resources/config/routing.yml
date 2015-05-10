@@ -47,3 +47,7 @@ nav_youtube:
 nav_soundcloud:
     path: /soundcloud
     defaults: { _controller: NavCMSBundle:Soundcloud:index }
+
+nav_convert:
+    path: /convert
+    defaults: { _controller: NavCMSBundle:Convert:convert }

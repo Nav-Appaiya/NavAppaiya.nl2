@@ -51,4 +51,10 @@ class DefaultController extends Controller
         $em->flush();
     }
 
+    public function phpinfoAction()
+    {
+        phpinfo();
+        exit;
+    }
+
 }

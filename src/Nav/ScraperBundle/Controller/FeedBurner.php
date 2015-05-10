@@ -94,6 +94,4 @@ class FeedBurner
     {
         return isset($this->entries) ? count($this->entries) : "No entries loaded, first load the feed";
     }
-
-
 }

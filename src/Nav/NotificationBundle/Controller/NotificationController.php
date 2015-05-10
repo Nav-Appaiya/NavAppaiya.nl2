@@ -108,5 +108,4 @@ class NotificationController extends Controller
     {
         return array_merge_recursive($this->session->getFlashBag()->all(), $this->flashes);
     }
-
 }

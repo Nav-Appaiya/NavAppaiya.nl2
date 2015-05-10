@@ -22,7 +22,6 @@ class ChuckNorris
         $this->client = new Client();
     }
 
-
     public function getOneRandomChuckNorrisJoke(){
         $response = $this->client->get("http://api.icndb.com/jokes/random")->json(['object'=>true]);
         if($response->type !== "success"){
@@ -40,5 +39,4 @@ class ChuckNorris
         }
         return $response->value->joke;
     }
-
 }
