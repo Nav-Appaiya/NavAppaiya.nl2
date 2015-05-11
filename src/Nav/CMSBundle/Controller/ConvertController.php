@@ -39,7 +39,7 @@ class ConvertController extends Controller
                 ->download();
             // TODO: Download file directly in browser
             $process = new Process($api, $response->url);
-            $process->download($resource->output->url);
+            $process->download($response->output->url);
             exit;
             $em->flush();
             return $this->redirect($this->generateUrl('nav_convert'));
