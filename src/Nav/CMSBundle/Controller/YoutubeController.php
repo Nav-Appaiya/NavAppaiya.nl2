@@ -48,8 +48,9 @@ class YoutubeController extends Controller
             $youtube->setComputerName($this->get('request')->getHost());
             $em->persist($youtube);
             $em->flush();
-            $notify = $this->get('nav.notification');
-            $notify->add('notification', ['title'=>'Success', 'message'=>'Done!']);
+            //TODO: Fix this, NotificationBundle is removed..
+//            $notify = $this->get('nav.notification');
+//            $notify->add('notification', ['title'=>'Success', 'message'=>'Done!']);
             return new RedirectResponse("http://navappaiya.nl/bin/getvideo.php?videoid=".$youtube->getUrl()."&format=free");
         }
         return $this->render('NavCMSBundle:Media:youtube.html.twig', [
