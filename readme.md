@@ -2,6 +2,8 @@ A Dev build with Symfony
 ========================
 Webapplication build with Symfony, as found on navappaiya.nl.
 
+<a href="http://dploy.io"><img src="https://nav.dploy.io/badge/02267417960256/24316.png" alt="Deployment status from dploy.io"></a>
+
 ### CMSBundle:
 Manage Users, Pages, Categories, and add newsfeed to display on 
 the homepage. Uses FOSUserBundle for User management and turns
@@ -31,4 +33,3 @@ Find the doc folder under every Bundle/Resource folder for more information
 or instructions how to use it. These bundles are purely for developing and 
 learning purposes. 
 
-<a href="http://dploy.io"><img src="https://nav.dploy.io/badge/02267417960256/24316.png" alt="Deployment status from dploy.io"></a>
