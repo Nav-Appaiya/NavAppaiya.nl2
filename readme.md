@@ -1,18 +1,33 @@
-A CMS with Symfony
+A Dev build with Symfony
 ========================
-A simple Content Management System in Symfony and 
-a Symfony2 build for development purposes. 
+Webapplication build with Symfony, as found on navappaiya.nl.
 
-CMS Login at /login to manage:
-- Users
-- Pages
-- Categories
-- Newsfeeds
+### CMSBundle:
+Manage Users, Pages, Categories, and add newsfeed to display on 
+the homepage. Uses FOSUserBundle for User management and turns
+valid json feeds (or feedburners feeds) to news headlines.
+Mainly this holds the most configuration and settings for my personal
+website. I will decouple this from other dependencies soon so it
+can be re-used by other projects. 
 
-The theme used in this project is the Cyborg Theme from Bootswatch.com
-https://bootswatch.com/
+### ScraperBundle:
+Used to scrape content from the web. Currently only contains 2
+apis but will be updated soon.
 
-Future feature-list:
-    - Youtube Video Downloader
-    - Soundcloud connect and get your playlist
-    - Manage the TweetBot and its behavior
+### SendGridBundle:
+Planned but not finished this one yet. Idea was using this bundle
+to send, receive and monitor email traffic for your webapplication
+with the SendGrid API. Work in progress.
+
+### WooBundle:
+A Bundle to talk with the WooCommerce REST API v2. Currently working
+on this. Will add more info about this soon.
+
+
+The theme used in this project is the Spacelab Theme from Bootswatch.com. 
+https://bootswatch.com/spacelab/
+
+Find the doc folder under every Bundle/Resource folder for more information
+or instructions how to use it. These bundles are purely for developing and 
+learning purposes. 
+
