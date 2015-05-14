@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Youtube
  *
- * @ORM\Table()
+ * @ORM\Table("youtube")
  * @ORM\Entity
  */
 class Youtube

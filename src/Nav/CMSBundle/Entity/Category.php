@@ -8,7 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Category
  *
- * @ORM\Table()
+ * @ORM\Table("category")
  * @ORM\Entity
  */
 class Category extends TimestampableEntity

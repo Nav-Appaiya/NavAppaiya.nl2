@@ -13,7 +13,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Contact
  *
- * @ORM\Table()
+ * @ORM\Table("contact")
  * @ORM\Entity
  */
 class Contact extends TimestampableEntity

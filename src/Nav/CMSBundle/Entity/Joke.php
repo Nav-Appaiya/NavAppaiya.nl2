@@ -14,7 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Joke
  *
- * @ORM\Table()
+ * @ORM\Table("joke")
  * @ORM\Entity
  */
 class Joke extends TimestampableEntity{
